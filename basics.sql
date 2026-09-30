@@ -1,3 +1,8 @@
+DROP TABLE IF EXISTS appointments CASCADE;
+DROP TABLE IF EXISTS appointment_log CASCADE;
+DROP TABLE IF EXISTS patients CASCADE;
+DROP TABLE IF EXISTS doctors CASCADE;
+
 CREATE TABLE patients (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -46,7 +51,7 @@ INSERT INTO patients (name, phone, email, birth_date)
 VALUES
 ('Ahmad Ali', '0791111111', 'ahmad@gmail.com', '1995-05-10'),
 ('Sara Omar', '0792222222', 'sara@gmail.com', '1998-08-20'),
-('Lina Khaled', '0793333333', 'lina@gmail.com', '2001-02-15');
+('Lina Khaled', '0793333333', 'lina@gmail.com', '2001-02-15'),
 ('Omar Saleh', '0794444444', 'omar@gmail.com', '1990-11-12');
 
 
@@ -54,7 +59,7 @@ INSERT INTO doctors (name, specialty, phone)
 VALUES
 ('Dr. Mohammad Hassan', 'Cardiology', '0781111111'),
 ('Dr. Rana Ahmad', 'Dermatology', '0782222222'),
-('Dr. Omar Khalil', 'Dentistry', '0783333333');
+('Dr. Omar Khalil', 'Dentistry', '0783333333'),
 ('Dr. Nour Sami', 'Neurology', '0784444444');
 
 INSERT INTO appointments
@@ -62,10 +67,10 @@ INSERT INTO appointments
 VALUES
     (1, 1, '2026-09-25 10:00:00', 'scheduled'),
     (2, 2, '2026-09-25 11:30:00', 'scheduled'),
-    (3, 3, '2026-09-26 09:00:00', 'scheduled');
-    (2, 1, '2026-09-27 14:00:00', 'scheduled');
-    (1, 4, '2026-09-28 10:00:00', 'scheduled');
-    (3, 4, '2026-09-29 11:00:00', 'scheduled');
+    (3, 3, '2026-09-26 09:00:00', 'scheduled'),
+    (2, 1, '2026-09-27 14:00:00', 'scheduled'),
+    (1, 4, '2026-09-28 10:00:00', 'scheduled'),
+    (3, 4, '2026-09-29 11:00:00', 'scheduled'),
     (1, 2, '2026-10-01 10:00:00', 'scheduled');
 
 UPDATE doctors

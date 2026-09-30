@@ -8,7 +8,7 @@ OPTIONS (
     dbname 'medical_clinic'
 );
 
-
+DROP USER MAPPING IF EXISTS FOR postgres SERVER clinic_server;
 CREATE USER MAPPING FOR postgres
     SERVER clinic_server
     OPTIONS (

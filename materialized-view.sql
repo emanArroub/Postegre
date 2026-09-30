@@ -1,3 +1,5 @@
+DROP MATERIALIZED VIEW IF EXISTS doctor_appointment_summary;
+
 CREATE MATERIALIZED VIEW doctor_appointment_summary AS
 SELECT
     doctors.name AS doctor_name,

@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS clinic_departments CASCADE;
 CREATE TABLE clinic_departments (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,

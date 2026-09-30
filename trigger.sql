@@ -10,6 +10,7 @@ BEGIN
 END;
 $$;
 
+DROP TRIGGER IF EXISTS after_appointment_insert ON appointments;
 CREATE TRIGGER after_appointment_insert
 AFTER INSERT ON appointments
 FOR EACH ROW
@@ -28,6 +29,7 @@ BEGIN
 END;
 $$;
 
+DROP TRIGGER IF EXISTS check_appointment_status ON appointments;
 CREATE TRIGGER check_appointment_status
 BEFORE INSERT OR UPDATE ON appointments
 FOR EACH ROW
@@ -48,6 +50,7 @@ BEGIN
 END;
 $$;
 
+DROP TRIGGER IF EXISTS set_doctor_updated_at ON doctors;
 CREATE TRIGGER set_doctor_updated_at
 BEFORE UPDATE ON doctors
 FOR EACH ROW
@@ -73,6 +76,7 @@ BEGIN
 END;
 $$;
 
+DROP TRIGGER IF EXISTS after_appointment_update ON appointments;
 CREATE TRIGGER after_appointment_update
 AFTER UPDATE ON appointments
 FOR EACH ROW
@@ -104,6 +108,7 @@ BEGIN
 END;
 $$;
 
+DROP TRIGGER IF EXISTS prevent_doctor_delete ON doctors;
 CREATE TRIGGER prevent_doctor_delete
 BEFORE DELETE ON doctors
 FOR EACH ROW

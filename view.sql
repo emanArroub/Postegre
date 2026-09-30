@@ -15,7 +15,8 @@ SELECT *
 FROM appointment_details
 WHERE status = 'scheduled';
 --
-CREATE VIEW patient_list AS
+DROP VIEW IF EXISTS patient_list CASCADE;
+CREATE VIEW patient_list AS 
 SELECT
     id,
     name,
